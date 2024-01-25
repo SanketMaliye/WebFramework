@@ -8,15 +8,15 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import Configuration.AppManager;
-import Pages.Ui_FunctionLibrary;
+import Pages.AppFunctionsLibrary;
 
 public class StepDefinitions extends AppManager {
 
-	Ui_FunctionLibrary uifunctionlibrary;
+	AppFunctionsLibrary uifunctionlibrary;
 
 	public StepDefinitions() {
 		super.setUp();
-		uifunctionlibrary = new Ui_FunctionLibrary(driver);
+		uifunctionlibrary = new AppFunctionsLibrary(driver);
 		System.out.println("setUp() completed successfully.");
 	}
 
@@ -30,31 +30,17 @@ public class StepDefinitions extends AppManager {
 		uifunctionlibrary.clickOnLoginButton();
 	}
 
-	@When("the user enters their email")
+	@When("the user enter correct email address and password")
 	public void the_user_enters_their_email() {
 		uifunctionlibrary.enterEmail();
-	}
-
-	@When("the user clicks on the continue button")
-	public void the_user_clicks_on_the_continue_button() {
-		uifunctionlibrary.clickOnContinueButton();
-	}
-
-	@When("the user enters their password")
-	public void the_user_enters_their_password() {
 		uifunctionlibrary.enterPassword();
 	}
 
-	@When("the user clicks on the continue button after entering the password")
+	@When("the user clicks on the login button after entering the password")
 	public void the_user_clicks_on_the_continue_button_after_entering_the_password() {
 		uifunctionlibrary.clickOnContinueButtonAfterEnteringPassword();
 	}
-
-	@When("the user clicks on the profile dropdown")
-	public void the_user_clicks_on_the_profile_dropdown() {
-		uifunctionlibrary.clickOnProfileDropdown();
-	}
-
+ 
 	@When("the user clicks on the logout link")
 	public void the_user_clicks_on_the_logout_link() {
 		uifunctionlibrary.clickOnLogoutLink();

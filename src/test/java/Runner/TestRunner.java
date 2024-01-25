@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 					 }, 
 			monochrome = true)
 
-//@Listeners(ExtentITestListenerClassAdapter.class)
+@Listeners(ExtentITestListenerClassAdapter.class)
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }
